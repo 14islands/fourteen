@@ -23,6 +23,7 @@ class Theme {
 		foreach(new \DirectoryIterator($functions_path) as $file) {
 		   if ( ! $file->isDot()
 		   		&& $file->isFile()
+		   		&& strtolower(pathinfo($file->getFilename(), PATHINFO_EXTENSION)) === 'php'
 		   		&& $file->getFilename()[0] !== '_'
 		   	) {
 		       include $functions_path . $file->getFilename();
@@ -125,11 +126,11 @@ class Theme {
 	function init() {
 		// @TODO move this away to a class?
 	  	register_nav_menus(
-				array(
-				  'primary-menu' => 'Primary menu'
-				)
-			);
-		}
+			array(
+			  'primary-menu' => 'Primary menu'
+			)
+		);
+
 		// register_post_type( 'games',
 		// 	array(
 		// 		'labels' => array(
