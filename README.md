@@ -48,4 +48,4 @@ Every class inside of `/inc/functions/` will be automatically loaded except the 
         |-- content-single.php
         |-- content.php
 ```
-Inspired by [_s](https://github.com/Automattic/_s). Some theme markup was copied from there and "cleaned up" to be more minimalistic.
+Inspired by [_s](https://github.com/Automattic/_s) and from our own private themes.
