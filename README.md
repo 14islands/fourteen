@@ -1,5 +1,5 @@
 # Fourteen
-A Wordpress boilerplate theme.
+A _truly_ copy & paste Wordpress boilerplate theme.
 
 Fourteen is a clean boilerplate theme that gives you a headstart in your Wordpress theme, without making you spend too much time removing stuff. 
 The idea is that you should spend time _adding_ functionality on top this theme rather than _removing_ things you won’t use.
