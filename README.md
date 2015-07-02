@@ -4,7 +4,7 @@ A Wordpress boilerplate theme.
 Fourteen is a clean boilerplate theme that gives you a headstart in your Wordpress theme, without making you spend too much time removing stuff. 
 The idea is that you should spend time _adding_ functionality on top this theme rather than _removing_ things you won’t use.
 
-For instance, there is no front-end setup here. Gulp or Grunt? Stylus or SASS? That is all up to you, there is no `css/` or `js`/ folders created for you :yum:
+For instance, there is no sidebar, widget locations, etc. There is also no front-end setup here. Gulp or Grunt? Stylus or SASS? That is all up to you, there is no `css/` or `js`/ folders created for you :yum:
 
 ## How to use it
 I recommend you simple download this repository and unzip it to start with a clean slate without this repositories info. Otherwise, for this repository to have your own copy and then clone it inside your `wp-content/themes/`.
@@ -48,3 +48,4 @@ Every class inside of `/inc/functions/` will be automatically loaded except the 
         |-- content-single.php
         |-- content.php
 ```
+Inspired by [_s](https://github.com/Automattic/_s). Some theme markup was copied from there and "cleaned up" to be more minimalistic.
