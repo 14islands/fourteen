@@ -7,7 +7,7 @@ The idea is that you should spend time _adding_ functionality on top this theme 
 For instance, there is no sidebar, widget locations, etc. There is also no front-end setup here. Gulp or Grunt? Stylus or SASS? That is all up to you, there is no `css/` or `js`/ folders created for you :yum:
 
 ## How to use it
-Simple download this repository and unzip it to start with a clean slate without this repositories info. Otherwise, for this repository to have your own copy and then clone it inside your `wp-content/themes/`.
+The recommended way is to simple [download the ZIP](https://github.com/14islands/fourteen/archive/master.zip) of this repository to start with a clean slate and put it in your `wp-content/themes/`. From there on it's all yours: rename the folder, add a few things, etc. 
 
 ## File structure and functions classes
 
