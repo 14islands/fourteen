@@ -13,7 +13,7 @@ A theme boilerplate called fourteen.
 
 == Description ==
 
-Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Fourteen is a Wordpress theme boilerplate that gives you a headstart by keeping your code well organized and minimal. Easily activate/de-activate functionality with functions classes and don't worry about spending too much time removing stuff - worry about adding your own sauce on top of this!
 
 == Installation ==
 
