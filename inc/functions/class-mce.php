@@ -8,7 +8,7 @@ class MceButtons {
 	function __construct() {
 		add_filter( 'mce_buttons', array($this, 'mce_buttons'), 0 );
 		add_filter( 'mce_buttons_2', array($this, 'mce_buttons_2'), 0 );
-		add_filter( 'tiny_mce_before_init', 'tiny_mce_before_init' );
+		add_filter( 'tiny_mce_before_init', array($this, 'tiny_mce_before_init'), 0 );
 	}
 
 	/**
