@@ -39,8 +39,11 @@
 			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'fourteen' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				<?php
+					// For an accessible menu, also use some aria-controls like:
+					// <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'fourteen' ); </button>
+				 	wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
+				?>
 			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->
 
