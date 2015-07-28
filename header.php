@@ -42,7 +42,13 @@
 				<?php
 					// For an accessible menu, also use some aria-controls like:
 					// <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'fourteen' ); </button>
-				 	wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
+					// @see https://codex.wordpress.org/Function_Reference/wp_nav_menu
+				 	wp_nav_menu(
+				 		array(
+				 			'theme_location' => 'primary',
+				 			'menu_id' => 'primary-menu'
+				 		)
+				 	);
 				?>
 			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->
