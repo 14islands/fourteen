@@ -48,6 +48,8 @@ class Theme {
 		 *
 		 * Make sure to update the domain if you are changing it.
 		 * Right now the domain is set to 'fourteen'
+		 *
+		 * @fixme remember to change the domain name to your own!
 		 */
 		load_theme_textdomain( 'fourteen', get_template_directory() . '/languages' );
 
@@ -81,18 +83,6 @@ class Theme {
 		// This theme styles the visual editor to resemble the theme style.
     	add_editor_style( array( 'typography.css' ) );
 
-		/*
-		 * Enable support for Post Formats.
-		 * See http://codex.wordpress.org/Post_Formats
-		 */
-		//  add_theme_support( 'post-formats', array(
-		// 	'aside',
-		// 	'image',
-		// 	'video',
-		// 	'quote',
-		// 	'link',
-		// ) );
-
 		// Disable wordpress generator banner
 	    remove_action('wp_head', 'wp_generator');
 
@@ -124,23 +114,15 @@ class Theme {
 	 * @see https://codex.wordpress.org/Plugin_API/Action_Reference/init
 	 */
 	function init() {
-		// @TODO move this away to a class?
+		// @todo move this away to a class?
 	  	register_nav_menus(
 			array(
 			  'primary-menu' => 'Primary menu'
 			)
 		);
 
-		// register_post_type( 'games',
-		// 	array(
-		// 		'labels' => array(
-		// 			'name' => __( 'Games' ),
-		// 			'singular_name' => __( 'Game' )
-		// 		),
-		// 		'public' => true,
-		// 		'has_archive' => true,
-		// 	)
-		// );
+	  	// You can also use register_post_type for your custom types here
+	  	// @see https://codex.wordpress.org/Function_Reference/register_post_type
 	}
 
 }
