@@ -17,8 +17,20 @@ Also gives you a much more maintainable code base.
 
 No more of this ugly checks `if ( ! function_exists( ‘function_name’ ) ) :` nor old code snippets lying around!
 
-### Adding your own function classes
-Every class inside of `/inc/functions/` will be automatically loaded except the ones that start with '_'.
+### Adding your own function classe
+Every class inside of `/functions/` will be automatically loaded __except the ones that are prefixed with '_'__.
+
+As of now it ships with the following folders:
+
+* `admin` for admin (back-end) related functionalities.
+* `content` for content models.
+* `structure` for content architecture (post types, taxonomy, etc).
+* `theme` for theme related functionalities.
+* `utils` for general utilities.
+
+The names or ammount of folders don't really matter. Feel free to structure it as you want to. 
+
+Full structure:
 
 ```
 |-- fourteen
@@ -33,11 +45,14 @@ Every class inside of `/inc/functions/` will be automatically loaded except the 
     |-- search.php
     |-- single.php
     |-- style.css
-    |-- inc
-    |   |-- functions
-    |       |-- _class-admin-menu.php <- this will NOT be loaded
-    |       |-- class-mce.php <- this WILL be loaded
-    |       |-- class-template-tags.php
+    |-- functions
+    |   |-- admin
+    |       |-- _class-admin-menu.php <- this would NOT be loaded
+    |       |-- class-mce.php <- this WOULD be loaded
+    |   |-- content
+    |   |-- structure
+    |   |-- theme
+    |   |-- utils
     |-- languages
     |   |-- fourteen.pot
     |-- page-templates
