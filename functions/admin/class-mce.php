@@ -49,7 +49,7 @@ class MceButtons {
 	 *
 	 * @param Array $buttons Buttons that are going to be displayed if unchanged.
 	 */
-	function mce_buttons_2($buttons) {
+	function mce_buttons_2( $buttons ) {
 		// No second row!
 		return array();
 	}
@@ -57,9 +57,9 @@ class MceButtons {
 	/**
 	 * Add custom classes to be available in the editor styles dropdown.
 	 *
-	 * @param Array $init_array tiny_mce configuration values.
+	 * @param Array $button tiny_mce configuration values.
 	 */
-	function tiny_mce_before_init( $init_array ) {
+	function tiny_mce_before_init( $button ) {
 
 		// Define the style_formats array
 		$style_formats = array(
@@ -118,7 +118,7 @@ class MceButtons {
 		);
 
 		// Insert the array, JSON ENCODED, into 'style_formats'
-		$init_array['style_formats'] = json_encode( $style_formats );
+		$button['style_formats'] = json_encode( $style_formats );
 
 		return $init_array;
 	}

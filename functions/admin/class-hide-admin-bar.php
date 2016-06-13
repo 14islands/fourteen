@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Hides the Admin bar
- */
 class HideAdminBar {
 
 	function __construct() {

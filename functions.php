@@ -4,125 +4,36 @@ namespace Fourteen;
 
 class Theme {
 
+	const FUNCTIONS_FOLDER = 'functions';
+
 	function __construct() {
 
-		// Our theme "main" functionality
-		add_action( 'after_setup_theme', array($this, 'after_setup_theme') );
-		add_action( 'wp_enqueue_scripts', array($this, 'wp_enqueue_scripts') );
-		add_action( 'init', array($this, 'init') );
-
 		/**
-		 * This loop will go through all the classes in /inc/functions
-		 * and include them dynamically.
+		 * This loop will go recursively through all the classes
+		 * in FUNCTIONS_FOLDER and include them dynamically.
 		 *
-		 * Since every class instanciates themselves,
+		 * Since most of the classes are singletons and instanciates themselves,
 		 * all the functionality will be available on the fly
 		 * keeping your theme neat and happy.
 		 */
-		$functions_path = get_template_directory() . '/inc/functions/';
-		foreach(new \DirectoryIterator($functions_path) as $file) {
-		   if ( ! $file->isDot()
-		   		&& $file->isFile()
-		   		&& strtolower(pathinfo($file->getFilename(), PATHINFO_EXTENSION)) === 'php'
-		   		&& $file->getFilename()[0] !== '_'
-		   	) {
-		       include $functions_path . $file->getFilename();
-		   }
-		}
+		$functions_path = get_template_directory() . DIRECTORY_SEPARATOR;
+		$functions_path .= self::FUNCTIONS_FOLDER . DIRECTORY_SEPARATOR;
 
-	}
-
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 *
-	 * @see https://codex.wordpress.org/Plugin_API/Action_Reference/after_setup_theme
-	 */
-	function after_setup_theme() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 *
-		 * Make sure to update the domain if you are changing it.
-		 * Right now the domain is set to 'fourteen'
-		 *
-		 * @fixme remember to change the domain name to your own!
-		 */
-		load_theme_textdomain( 'fourteen', get_template_directory() . '/languages' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-		 */
-		add_theme_support( 'post-thumbnails' );
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
-
-		// This theme styles the visual editor to resemble the theme style.
-    	add_editor_style( array( 'typography.css' ) );
-
-		// Disable wordpress generator banner
-	    remove_action('wp_head', 'wp_generator');
-
-	    // Disable all meta junk
-	    remove_action('wp_head', 'rsd_link');
-	    remove_action('wp_head', 'wlwmanifest_link');
-	    remove_action('wp_head', 'index_rel_link');
-	    remove_action('wp_head', 'wp_shortlink_wp_head');
-	    remove_action('wp_head', 'feed_links_extra', 3 );
-	    remove_action('wp_head', 'feed_links', 2 );
-
-	}
-
-	/**
-	 * 'wp_enqueue_scripts' is the proper hook to use when enqueuing items that are meant to appear on the front end.
-	 * Despite the name, it is used for enqueuing both scripts and styles.
-	 *
-	 * @see https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts
-	 */
-	function wp_enqueue_scripts() {
-		wp_enqueue_style( 'main-style', get_stylesheet_uri() );
-	}
-
-	/**
-	 * Fires after WordPress has finished loading but before any headers are sent.
-	 * Most of WP is loaded at this stage, and the user is authenticated. 
-	 * WP continues to load on the init hook that follows (e.g. widgets), and many plugins instantiate themselves on it for all sorts of reasons (e.g. they need a user, a taxonomy, etc.).
-	 *
-	 * @see https://codex.wordpress.org/Plugin_API/Action_Reference/init
-	 */
-	function init() {
-		// @todo move this away to a class?
-	  	register_nav_menus(
-			array(
-			  'primary-menu' => 'Primary menu'
-			)
+		$iterator = new \RecursiveIteratorIterator(
+			new \RecursiveDirectoryIterator($functions_path),
+			\RecursiveIteratorIterator::SELF_FIRST
 		);
 
-	  	// You can also use register_post_type for your custom types here
-	  	// @see https://codex.wordpress.org/Function_Reference/register_post_type
+		foreach($iterator as $file) {
+			if ( !$iterator->isDot()
+				&& $file->isFile()
+				&& strtolower(pathinfo($file->getFilename(), PATHINFO_EXTENSION)) === 'php'
+				&& $file->getFilename()[0] !== '_'
+			) {
+				include $file->getPathname();
+			}
+		}
+
 	}
 
 }
