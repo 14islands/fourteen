@@ -8,12 +8,9 @@
 
 ?>
 
-	</div><!-- #content -->
+	</div>
 
-	<footer class="site-footer" role="contentinfo">
-	</footer><!-- ./site-footer -->
-
-</div><!-- #page -->
+</div>
 
 <?php wp_footer(); ?>
 

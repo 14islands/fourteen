@@ -9,12 +9,13 @@
 
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'fourteen' ); ?></h1>
+<section>
+
+	<header>
+		<h1><?php esc_html_e( 'Nothing Found', 'fourteen' ); ?></h1>
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div>
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
 			<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'fourteen' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
@@ -30,5 +31,6 @@
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
+	</div>
+
+</section>

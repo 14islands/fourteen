@@ -21,24 +21,28 @@
 	 	// - http://www.favicomatic.com/
 	?>
 
-	<link href="<?php echo get_template_directory_uri(); ?>/images/icons/favicon.ico" rel="shortcut icon">
+<!-- 	<link href="<?php echo get_template_directory_uri(); ?>/images/icons/favicon.ico" rel="shortcut icon">
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/images/icons/favicon-57.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/icons/favicon-114.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/icons/favicon-72.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/images/icons/favicon-144.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/images/icons/favicon-144.png" /> -->
+
+    <?php wp_site_icon(); ?>
 
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	<div id="page" class="hfeed site">
+
+	<div class="hfeed site">
+
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'fourteen' ); ?></a>
 
-		<header id="masthead" class="site-header" role="banner">
+		<header role="banner">
 
 			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a>
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
+			<nav role="navigation">
 				<?php
 					// For an accessible menu, also use some aria-controls like:
 					// <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'fourteen' ); </button>
@@ -50,7 +54,7 @@
 				 		)
 				 	);
 				?>
-			</nav><!-- #site-navigation -->
-		</header><!-- #masthead -->
+			</nav>
+		</header>
 
-		<div id="content" class="site-content">
+		<div>
