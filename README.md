@@ -22,9 +22,9 @@ The theme uses PHP5 OOP Classes to break down the `functions.php` in a more dyna
 This way there is no need to prefix your function names anywhere nor check if they exist before writing the actual code.
 Also gives you a much more maintainable code base.
 
-No more of this ugly checks `if ( ! function_exists( ‘function_name’ ) ) :` nor old code snippets lying around!
+No more of these ugly checks `if ( ! function_exists( ‘function_name’ ) ) :` nor old code snippets lying around!
 
-### Adding your own function classe
+### Adding your own function class
 Every class inside of `/functions/` will be automatically loaded __except the ones that are prefixed with '_'__.
 
 As of now it ships with the following folders:
