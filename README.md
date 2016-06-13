@@ -4,7 +4,7 @@ A _truly_ copy & paste Wordpress boilerplate theme.
 Fourteen is a clean boilerplate theme that gives you a headstart in your Wordpress theme, without making you spend too much time removing stuff. 
 The idea is that you should spend time _adding_ functionality on top this theme rather than _removing_ things you won’t use.
 
-For instance, there is no sidebar, widget locations, etc. There is also no front-end setup here. Gulp or Grunt? Stylus or SASS? That is all up to you, there is no `css/` or `js`/ folders created for you :yum:
+For instance, there is no sidebar, widget locations, etc. There is also no front-end setup here. `Gulp` or `Grunt`? `Stylus` or `SASS`? That is all up to you, there are no `css/` or `js`/ folders created for you :yum:
 
 ## How to use it
 
