@@ -7,7 +7,14 @@ The idea is that you should spend time _adding_ functionality on top this theme 
 For instance, there is no sidebar, widget locations, etc. There is also no front-end setup here. Gulp or Grunt? Stylus or SASS? That is all up to you, there is no `css/` or `js`/ folders created for you :yum:
 
 ## How to use it
-The recommended way is to simple [download the ZIP](https://github.com/14islands/fourteen/archive/master.zip) of this repository to start with a clean slate and put it in your `wp-content/themes/`. From there on it's all yours: rename the folder, add a few things, etc. 
+
+Considering you are in your `wp-content/themes/` folder, paste the following in your terminal:
+
+ `curl -L -o fourteen.zip https://github.com/14islands/fourteen/zipball/master/ ; unzip fourteen.zip`
+
+Otherwise simply [download the ZIP](https://github.com/14islands/fourteen/archive/master.zip) of this repository and put it in your `wp-content/themes/`. 
+
+From there on it's all yours: make sure to rename the folder, add a few things, etc.
 
 ## File structure and functions classes
 
