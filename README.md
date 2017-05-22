@@ -27,7 +27,7 @@ No more of these ugly checks `if ( ! function_exists( ‘function_name’ ) ) :`
 ### Adding your own function class
 Every class inside of `/functions/` will be automatically loaded __except the ones that are prefixed with '_'__.
 
-As of now it ships with the following folders:
+As of now, it ships with the following folders:
 
 * `admin` for admin (back-end) related functionalities.
 * `content` for content models.
@@ -35,7 +35,7 @@ As of now it ships with the following folders:
 * `theme` for theme related functionalities.
 * `utils` for general utilities.
 
-The names or ammount of folders don't really matter. Feel free to structure it as you want to. 
+The names or amount of folders don't really matter. Feel free to structure it as you want to. 
 
 Full structure:
 
