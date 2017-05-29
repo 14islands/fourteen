@@ -42,8 +42,8 @@ class EnqueueScripts {
 		$jquery_path = get_template_directory_uri() . '/src/js/vendor/jquery.min.js';
 
 		wp_add_inline_script(
-			'jquery',
-			'window.jQuery || document.write("<script src=\"'.$jquery_path.'\"><\/script>")'
+			"jquery",
+			"window.jQuery || document.write('<script src=\"{$jquery_path}\"><\/script>')"
 		);
 
 		// And finally add it back into the queue
