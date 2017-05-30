@@ -58,8 +58,9 @@ class MceButtons {
 	 * Add custom classes to be available in the editor styles dropdown.
 	 *
 	 * @param Array $button tiny_mce configuration values.
+	 * @see  https://codex.wordpress.org/TinyMCE_Custom_Styles
 	 */
-	function tiny_mce_before_init( $button ) {
+	function tiny_mce_before_init( $init_array ) {
 
 		// Define the style_formats array
 		$style_formats = array(
@@ -118,7 +119,7 @@ class MceButtons {
 		);
 
 		// Insert the array, JSON ENCODED, into 'style_formats'
-		$button['style_formats'] = json_encode( $style_formats );
+		$init_array['style_formats'] = json_encode( $style_formats );
 
 		return $init_array;
 	}
